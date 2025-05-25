@@ -344,3 +344,4 @@ const Header = () => {
 };
 
 export default Header;
+// This is the main page component that renders the Header
