@@ -39,9 +39,8 @@ const Particle = ({
         top: `${startY}%`,
         backgroundColor: color,
       }}
-      initial={{ opacity: 0, scale: 0 }}
+      initial={{ scale: 0 }}
       animate={{
-        opacity: [0, 0.8, 0],
         scale: [0, 1.2, 0],
         x: `${endX - startX}%`,
         y: `${endY - startY}%`,
@@ -101,7 +100,6 @@ const Header = () => {
       const tl = gsap.timeline();
       tl.from(".profile-image-container", {
         y: 50,
-        opacity: 0,
         duration: 0.8,
         ease: "power3.out",
       })
@@ -110,7 +108,6 @@ const Header = () => {
           {
             stagger: 0.1,
             y: -20,
-            opacity: 0,
             duration: 0.5,
             ease: "back.out",
           },
@@ -120,7 +117,6 @@ const Header = () => {
           ".header-content h1",
           {
             y: 20,
-            opacity: 0,
             duration: 0.6,
           },
           "-=0.4"
@@ -129,7 +125,6 @@ const Header = () => {
           ".header-content p",
           {
             y: 20,
-            opacity: 0,
             duration: 0.6,
           },
           "-=0.3"
@@ -138,7 +133,6 @@ const Header = () => {
           ".action-buttons",
           {
             y: 20,
-            opacity: 0,
             duration: 0.6,
           },
           "-=0.2"
@@ -150,8 +144,8 @@ const Header = () => {
   return (
     <motion.header
       ref={containerRef}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className="relative h-screen w-full flex items-center justify-center overflow-hidden"
     >
@@ -248,8 +242,8 @@ const Header = () => {
         <div className="header-content text-center flex flex-col items-center">
           <motion.h1
             className="text-5xl md:text-6xl font-bold text-white mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ delay: 0.3 }}
           >
             Mohammed Hussen
@@ -257,8 +251,8 @@ const Header = () => {
 
           <motion.p
             className="text-2xl md:text-3xl text-white/90 mb-8 max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ delay: 0.4 }}
           >
             Full-stack Developer | UI/UX Designer
@@ -266,8 +260,8 @@ const Header = () => {
 
           <motion.div
             className="flex justify-center gap-6 mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
             transition={{ delay: 0.5 }}
           >
             {[
@@ -309,8 +303,8 @@ const Header = () => {
 
           <motion.div
             className="action-buttons flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ delay: 0.6 }}
           >
             <motion.a
